@@ -1,10 +1,19 @@
 import requests
+import time
 
 
 # Requisito 1
 def fetch(url):
-    response = requests.get(url)
-    return response.text
+    headers = {"user-agent": "Fake user-agent"}
+
+    try:
+        response = requests.get(url, headers=headers, timeout=3)
+        time.sleep(1)
+
+        if response.status_code == 200:
+            return response.text
+    except requests.ReadTimeout:
+        return None
 
 
 # Requisito 2
