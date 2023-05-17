@@ -44,3 +44,7 @@ def analyzer_menu():
             news_category = input("Digite a categoria:")
             news_list = search_by_category(news_category)
             sys.stderr.write(str(news_list))
+
+        elif selected_option == 4:
+            news_list = top_5_categories()
+            sys.stderr.write(str(news_list))
