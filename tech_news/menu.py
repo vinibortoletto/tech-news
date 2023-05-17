@@ -39,3 +39,8 @@ def analyzer_menu():
             news_date = input("Digite a data no formato aaaa-mm-dd:")
             news_list = search_by_date(news_date)
             sys.stderr.write(str(news_list))
+
+        elif selected_option == 3:
+            news_category = input("Digite a categoria:")
+            news_list = search_by_category(news_category)
+            sys.stderr.write(str(news_list))
