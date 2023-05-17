@@ -19,36 +19,34 @@ def analyzer_menu():
 
     try:
         selected_option = int(input(options_message))
+        news_list = None
 
         if selected_option == 0:
             news_amount = int(input("Digite quantas notícias serão buscadas:"))
             news_list = get_tech_news(news_amount)
-            sys.stdout.write(str(news_list))
 
         elif selected_option == 1:
             news_title = input("Digite o título:")
             news_list = search_by_title(news_title)
-            sys.stdout.write(str(news_list))
 
         elif selected_option == 2:
             news_date = input("Digite a data no formato aaaa-mm-dd:")
             news_list = search_by_date(news_date)
-            sys.stdout.write(str(news_list))
 
         elif selected_option == 3:
             news_category = input("Digite a categoria:")
             news_list = search_by_category(news_category)
-            sys.stdout.write(str(news_list))
 
         elif selected_option == 4:
             news_list = top_5_categories()
-            sys.stdout.write(str(news_list))
 
         elif selected_option == 5:
             sys.stdout.write("Encerrando script\n")
 
         else:
             raise ValueError
+
+        sys.stdout.write(str(news_list))
 
     except ValueError:
         sys.stderr.write("Opção inválida\n")
