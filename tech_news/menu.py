@@ -19,9 +19,7 @@ def analyzer_menu():
 
     try:
         selected_option = int(input(options_message))
-    except ValueError:
-        sys.stderr.write("Opção inválida")
-    else:
+
         if selected_option == 0:
             news_amount = int(input("Digite quantas notícias serão buscadas:"))
             news_list = get_tech_news(news_amount)
@@ -48,3 +46,9 @@ def analyzer_menu():
 
         elif selected_option == 5:
             sys.stdout.write("Encerrando script\n")
+
+        else:
+            raise ValueError
+
+    except ValueError:
+        sys.stderr.write("Opção inválida\n")
