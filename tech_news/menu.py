@@ -48,3 +48,6 @@ def analyzer_menu():
         elif selected_option == 4:
             news_list = top_5_categories()
             sys.stderr.write(str(news_list))
+
+        elif selected_option == 5:
+            sys.stderr.write("Encerrando script \n")
