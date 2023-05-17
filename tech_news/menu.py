@@ -1,4 +1,10 @@
+from tech_news.analyzer.ratings import top_5_categories
 from tech_news.scraper import get_tech_news
+from tech_news.analyzer.search_engine import (
+    search_by_category,
+    search_by_date,
+    search_by_title,
+)
 import sys
 
 
@@ -21,5 +27,9 @@ def analyzer_menu():
     else:
         if selected_option == 0:
             news_amount = int(input("Digite quantas notícias serão buscadas:"))
-            test = get_tech_news(news_amount)
-            sys.stderr.write(test)
+            news_list = get_tech_news(news_amount)
+            sys.stderr.write(str(news_list))
+        elif selected_option == 1:
+            news_title = input("Digite o título:")
+            news_list = search_by_title(news_title)
+            sys.stderr.write(str(news_list))
