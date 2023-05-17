@@ -29,7 +29,13 @@ def analyzer_menu():
             news_amount = int(input("Digite quantas notícias serão buscadas:"))
             news_list = get_tech_news(news_amount)
             sys.stderr.write(str(news_list))
+
         elif selected_option == 1:
             news_title = input("Digite o título:")
             news_list = search_by_title(news_title)
+            sys.stderr.write(str(news_list))
+
+        elif selected_option == 2:
+            news_date = input("Digite a data no formato aaaa-mm-dd:")
+            news_list = search_by_date(news_date)
             sys.stderr.write(str(news_list))
