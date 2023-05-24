@@ -14,6 +14,7 @@ Este projeto foi desenvolvido usando as seguintes tecnologias:
 
 -  **Python**;
 -  **Pytest**;
+-  **Pymongo**;
 -  **Git**;
 -  **Visual Studio Code**.
 
